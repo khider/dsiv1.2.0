@@ -1,0 +1,84 @@
+step: 2
+name: dsiv1.2.0
+docker_image: dsiv1.2.0:latest
+framework: !!python/object/apply:mic.constants.Framework
+- !!python/tuple
+  - general
+  - mintproject/generic:latest
+container_name: dsiv1.2.0_ec47cbfb
+configs:
+  config_json:
+    path: config.json
+    format: json
+code_files:
+  WM_climate_indices_py:
+    path: WM_climate_indices.py
+    format: py
+# Add a default value and type to any automatically generated parameters
+# It is also recommended you add a descriptions to your parameters
+# Add a default value and type to any automatically generated parameters
+# It is also recommended you add a descriptions to your parameters
+parameters:
+  index:
+    default_value: SPI
+    description: ''
+    type: str
+  distribution:
+    default_value: gamma
+    description: ''
+    type: str
+  scales:
+    default_value: 6
+    description: ''
+    type: int
+  sim_start_year:
+    default_value: 2010
+    description: ''
+    type: int
+  sim_end_year:
+    default_value: 2018
+    description: ''
+    type: int
+  calib_start_year:
+    default_value: 2000
+    description: ''
+    type: int
+  global:
+    default_value: false
+    description: ''
+    type: bool
+  min_lon:
+    default_value: 23
+    description: ''
+    type: float
+  calib_end_year:
+    default_value: 2010
+    description: ''
+    type: int
+  max_lon:
+    default_value: 48
+    description: ''
+    type: float
+  min_lat:
+    default_value: 3
+    description: ''
+    type: float
+  max_lat:
+    default_value: 15
+    description: ''
+    type: float
+  dataset_type:
+    default_value: GLDAS
+    description: ''
+    type: str
+outputs:
+  results_nc:
+    path: results/results.nc
+    format: nc
+  results_mp4:
+    path: results/results.mp4
+    format: mp4
+inputs:
+  climate_input:
+    path: GLDAS2.1_TP_2000_2018.nc
+    format: nc

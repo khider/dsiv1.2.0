@@ -1,0 +1,30 @@
+{
+"data" :
+  {
+  "dataset_name" : "GLDAS2.1_TP_2000_2018.nc",
+  "dataset_type" : "${dataset_type}"
+},
+"output" :
+  {
+  "dynamic_name": "False",
+  "path" : "./",
+  "fig" : "True"
+},
+"index" :
+  {
+  "name" : "${index}",
+  "distribution" : "${distribution}",
+  "periodicity" : "monthly",
+  "scales" : "${scales}",
+  "data_start_year" : "${sim_start_year}",
+  "data_end_year" : "${sim_end_year}",
+  "calibration_start_year" : "${calib_start_year}",
+  "calibration_end_year" : "${calib_end_year}"
+},
+"spatial" :
+  {
+  "global" : "${global}",
+  "bounding_box": "[${min_lon},${max_lon},${min_lat},${max_lat}]"
+},
+"debug" : "False"
+}

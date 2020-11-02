@@ -93,3 +93,32 @@ mic   _utils.py          INFO     Command: {'name': 'upload', 'command_parameter
 mic   github.py          INFO     Creating the git repository
 mic   github.py          INFO     Compressing code
 mic   github.py          INFO     Creating a new commit
+mic   commands.py        ERROR    Upload failed: module 'click' has no attribute 'error'
+Traceback (most recent call last):
+  File "/Users/deborahkhider/opt/anaconda3/envs/daniel/lib/python3.7/site-packages/mic/publisher/github.py", line 295, in github_config
+    credentials = get_credentials(profile)
+  File "/Users/deborahkhider/opt/anaconda3/envs/daniel/lib/python3.7/site-packages/mic/credentials.py", line 19, in get_credentials
+    return credentials[profile]
+  File "/Users/deborahkhider/opt/anaconda3/envs/daniel/lib/python3.7/configparser.py", line 958, in __getitem__
+    raise KeyError(key)
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deborahkhider/opt/anaconda3/envs/daniel/lib/python3.7/site-packages/mic/click_encapsulate/commands.py", line 687, in upload
+    push(mic_config_path.parent, mic_config_path, name, profile)
+  File "/Users/deborahkhider/opt/anaconda3/envs/daniel/lib/python3.7/site-packages/mic/publisher/github.py", line 35, in push
+    url = check_create_remote_repo(repo, profile, repository_name)
+  File "/Users/deborahkhider/opt/anaconda3/envs/daniel/lib/python3.7/site-packages/mic/publisher/github.py", line 126, in check_create_remote_repo
+    repo_github = github_create_repo(profile, model_name)
+  File "/Users/deborahkhider/opt/anaconda3/envs/daniel/lib/python3.7/site-packages/mic/publisher/github.py", line 255, in github_create_repo
+    git_token, git_username = github_config(profile)
+  File "/Users/deborahkhider/opt/anaconda3/envs/daniel/lib/python3.7/site-packages/mic/publisher/github.py", line 300, in github_config
+    click.error(DEFAULT_CONFIGURATION_WARNING + " {}".format(profile))
+AttributeError: module 'click' has no attribute 'error'
+mic   _utils.py          INFO     <=================>
+mic   _utils.py          INFO     Command: {'name': 'upload', 'command_parameters': {'mic_file': {'value': '/Users/deborahkhider/Documents/MINT/Drought/ForMIC/mic/mic.yaml', 'type': 'str'}, 'profile': {'value': 'default', 'type': 'str'}, 'model_configuration': {'value': True, 'type': 'bool'}, 'data_transformation': {'value': None, 'type': 'NoneType'}}}
+mic   github.py          INFO     Creating the git repository
+mic   github.py          INFO     Compressing code
+mic   github.py          INFO     Creating a new commit

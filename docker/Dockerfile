@@ -1,6 +1,7 @@
-FROM condatest
-
-COPY entrypoint.sh /set_umask.sh
-
-RUN chmod +x /set_umask.sh
-ENTRYPOINT ["/set_umask.sh"]
+FROM continuumio/miniconda3
+COPY . .
+RUN apt-get update && apt-get install -y \
+gettext-base
+RUN conda env create -f environment.yml
+RUN echo "source activate climate" > ~/.bashrc
+ENV PATH /opt/conda/envs/climate/bin:$PATH

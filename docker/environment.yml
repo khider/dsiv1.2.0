@@ -1,0 +1,21 @@
+name: climate
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy
+  - dask
+  - bottleneck
+  - netcdf4
+  - xarray
+  - jupyter
+  - matplotlib
+  - cartopy
+  - imageio
+  - pip
+  - pip:
+    - climate-indices
+    - imageio-ffmpeg
+    - mic
+    - reprozip
+prefix: /Users/deborahkhider/opt/anaconda3/envs/climate

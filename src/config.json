@@ -1,7 +1,7 @@
 {
 "data" :
   {
-  "dataset_name" : "GLDAS2.1_TP_2000_2018.nc",
+  "dataset_name" : "${climate_input}",
   "dataset_type" : "${dataset_type}"
 },
 "output" :
